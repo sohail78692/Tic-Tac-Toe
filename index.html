@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Play Tic-Tac-Toe against AI or friends. Multiple difficulty levels and beautiful themes.">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Tic-Tac-Toe - Play Against AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Theme Selector -->
+    <div class="theme-selector">
+        <button class="theme-btn" data-theme="purple" title="Purple Theme">
+            <span class="theme-color" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></span>
+        </button>
+        <button class="theme-btn" data-theme="ocean" title="Ocean Theme">
+            <span class="theme-color" style="background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);"></span>
+        </button>
+        <button class="theme-btn" data-theme="sunset" title="Sunset Theme">
+            <span class="theme-color" style="background: linear-gradient(135deg, #ff6e7f 0%, #bfe9ff 100%);"></span>
+        </button>
+        <button class="theme-btn" data-theme="forest" title="Forest Theme">
+            <span class="theme-color" style="background: linear-gradient(135deg, #134e5e 0%, #71b280 100%);"></span>
+        </button>
+        <button class="theme-btn" data-theme="fire" title="Fire Theme">
+            <span class="theme-color" style="background: linear-gradient(135deg, #f2994a 0%, #f2c94c 100%);"></span>
+        </button>
+        <button class="theme-btn" data-theme="dark" title="Dark Theme">
+            <span class="theme-color" style="background: linear-gradient(135deg, #232526 0%, #414345 100%);"></span>
+        </button>
+    </div>
+
+    <div class="container">
+        <h1>Tic-Tac-Toe</h1>
+
+        <!-- Game Mode Selection -->
+        <div class="mode-selection" id="modeSelection">
+            <h2>Select Game Mode</h2>
+            <div class="mode-buttons">
+                <button class="mode-btn" id="pvpMode">Player vs Player</button>
+                <button class="mode-btn" id="pvcMode">Player vs AI</button>
+            </div>
+        </div>
+
+        <!-- Difficulty Selection -->
+        <div class="difficulty-selection hidden" id="difficultySelection">
+            <h2>Select Difficulty</h2>
+            <div class="difficulty-buttons">
+                <button class="difficulty-btn" data-difficulty="easy">Easy</button>
+                <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+                <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+                <button class="difficulty-btn" data-difficulty="impossible">Impossible</button>
+            </div>
+        </div>
+
+        <!-- Score Board -->
+        <div class="scoreboard hidden" id="scoreboard">
+            <div class="score-item">
+                <span class="score-label">Player X</span>
+                <span class="score-value" id="scoreX">0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">Draws</span>
+                <span class="score-value" id="scoreDraw">0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label" id="player2Label">Player O</span>
+                <span class="score-value" id="scoreO">0</span>
+            </div>
+        </div>
+
+        <!-- Game Info -->
+        <div class="game-info hidden" id="gameInfo">
+            <p id="status">Player X's turn</p>
+            <p class="game-mode-info" id="gameModeInfo"></p>
+        </div>
+
+        <!-- Game Board -->
+        <div class="board hidden" id="board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+
+        <!-- Game Controls -->
+        <div class="game-controls hidden" id="gameControls">
+            <button id="resetButton">New Round</button>
+            <button id="changeModeButton">Change Mode</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
